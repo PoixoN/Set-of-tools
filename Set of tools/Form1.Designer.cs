@@ -41,7 +41,17 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.cbMetrics = new System.Windows.Forms.ComboBox();
+            this.btnSwap = new System.Windows.Forms.Button();
+            this.tbTo = new System.Windows.Forms.TextBox();
+            this.tbFrom = new System.Windows.Forms.TextBox();
+            this.btnConvector = new System.Windows.Forms.Button();
+            this.cbTo = new System.Windows.Forms.ComboBox();
+            this.cbFrom = new System.Windows.Forms.ComboBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.btnClearPassword = new System.Windows.Forms.Button();
+            this.btnCopyPassword = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.btnCreatePassword = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,18 +77,9 @@
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCopyPassword = new System.Windows.Forms.Button();
-            this.btnClearPassword = new System.Windows.Forms.Button();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.cbFrom = new System.Windows.Forms.ComboBox();
-            this.cbTo = new System.Windows.Forms.ComboBox();
-            this.btnConvector = new System.Windows.Forms.Button();
-            this.tbFrom = new System.Windows.Forms.TextBox();
-            this.tbTo = new System.Windows.Forms.TextBox();
-            this.btnSwap = new System.Windows.Forms.Button();
-            this.cbMetrics = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).BeginInit();
             this.tabPage3.SuspendLayout();
@@ -87,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -101,7 +101,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(328, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -200,6 +199,104 @@
             this.tabControl1.Size = new System.Drawing.Size(328, 288);
             this.tabControl1.TabIndex = 1;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.cbMetrics);
+            this.tabPage5.Controls.Add(this.btnSwap);
+            this.tabPage5.Controls.Add(this.tbTo);
+            this.tabPage5.Controls.Add(this.tbFrom);
+            this.tabPage5.Controls.Add(this.btnConvector);
+            this.tabPage5.Controls.Add(this.cbTo);
+            this.tabPage5.Controls.Add(this.cbFrom);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(320, 262);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Convertor";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // cbMetrics
+            // 
+            this.cbMetrics.FormattingEnabled = true;
+            this.cbMetrics.Items.AddRange(new object[] {
+            "Length",
+            "Mass"});
+            this.cbMetrics.Location = new System.Drawing.Point(102, 57);
+            this.cbMetrics.Name = "cbMetrics";
+            this.cbMetrics.Size = new System.Drawing.Size(121, 21);
+            this.cbMetrics.TabIndex = 6;
+            this.cbMetrics.Text = "Length";
+            this.cbMetrics.SelectedIndexChanged += new System.EventHandler(this.cbMetrics_SelectedIndexChanged);
+            // 
+            // btnSwap
+            // 
+            this.btnSwap.Location = new System.Drawing.Point(125, 143);
+            this.btnSwap.Name = "btnSwap";
+            this.btnSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnSwap.TabIndex = 5;
+            this.btnSwap.Text = "<->";
+            this.btnSwap.UseVisualStyleBackColor = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
+            // 
+            // tbTo
+            // 
+            this.tbTo.Location = new System.Drawing.Point(206, 163);
+            this.tbTo.Name = "tbTo";
+            this.tbTo.ReadOnly = true;
+            this.tbTo.Size = new System.Drawing.Size(83, 20);
+            this.tbTo.TabIndex = 4;
+            this.tbTo.Text = "0";
+            // 
+            // tbFrom
+            // 
+            this.tbFrom.Location = new System.Drawing.Point(36, 163);
+            this.tbFrom.Name = "tbFrom";
+            this.tbFrom.Size = new System.Drawing.Size(83, 20);
+            this.tbFrom.TabIndex = 3;
+            this.tbFrom.Text = "0";
+            // 
+            // btnConvector
+            // 
+            this.btnConvector.Location = new System.Drawing.Point(102, 84);
+            this.btnConvector.Name = "btnConvector";
+            this.btnConvector.Size = new System.Drawing.Size(121, 36);
+            this.btnConvector.TabIndex = 2;
+            this.btnConvector.Text = "Convert";
+            this.btnConvector.UseVisualStyleBackColor = true;
+            this.btnConvector.Click += new System.EventHandler(this.btnConvector_Click);
+            // 
+            // cbTo
+            // 
+            this.cbTo.FormattingEnabled = true;
+            this.cbTo.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbTo.Location = new System.Drawing.Point(206, 126);
+            this.cbTo.Name = "cbTo";
+            this.cbTo.Size = new System.Drawing.Size(83, 21);
+            this.cbTo.TabIndex = 1;
+            this.cbTo.Text = "mm";
+            // 
+            // cbFrom
+            // 
+            this.cbFrom.FormattingEnabled = true;
+            this.cbFrom.Items.AddRange(new object[] {
+            "mm",
+            "cm",
+            "dm",
+            "m",
+            "km",
+            "mile"});
+            this.cbFrom.Location = new System.Drawing.Point(36, 126);
+            this.cbFrom.Name = "cbFrom";
+            this.cbFrom.Size = new System.Drawing.Size(83, 21);
+            this.cbFrom.TabIndex = 0;
+            this.cbFrom.Text = "mm";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.btnClearPassword);
@@ -216,13 +313,32 @@
             this.tabPage4.Text = "Passwords";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // btnClearPassword
+            // 
+            this.btnClearPassword.Location = new System.Drawing.Point(99, 135);
+            this.btnClearPassword.Name = "btnClearPassword";
+            this.btnClearPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnClearPassword.TabIndex = 6;
+            this.btnClearPassword.Text = "Clear";
+            this.btnClearPassword.UseVisualStyleBackColor = true;
+            this.btnClearPassword.Click += new System.EventHandler(this.btnClearPassword_Click);
+            // 
+            // btnCopyPassword
+            // 
+            this.btnCopyPassword.Location = new System.Drawing.Point(8, 135);
+            this.btnCopyPassword.Name = "btnCopyPassword";
+            this.btnCopyPassword.Size = new System.Drawing.Size(75, 23);
+            this.btnCopyPassword.TabIndex = 5;
+            this.btnCopyPassword.Text = "Copy";
+            this.btnCopyPassword.UseVisualStyleBackColor = true;
+            this.btnCopyPassword.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(8, 164);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(304, 20);
             this.tbPassword.TabIndex = 4;
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // btnCreatePassword
             // 
@@ -242,7 +358,6 @@
             this.label4.Size = new System.Drawing.Size(36, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "length";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // nudPassLength
             // 
@@ -265,7 +380,6 @@
             0,
             0,
             0});
-            this.nudPassLength.ValueChanged += new System.EventHandler(this.nudPassLength_ValueChanged);
             // 
             // clbPassword
             // 
@@ -280,7 +394,6 @@
             this.clbPassword.Name = "clbPassword";
             this.clbPassword.Size = new System.Drawing.Size(174, 64);
             this.clbPassword.TabIndex = 0;
-            this.clbPassword.SelectedIndexChanged += new System.EventHandler(this.clbPassword_SelectedIndexChanged);
             // 
             // tabPage3
             // 
@@ -321,7 +434,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Generator";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // cbRand
             // 
@@ -361,7 +473,6 @@
             this.label1.Size = new System.Drawing.Size(110, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Your random numbers";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // tbRand
             // 
@@ -389,7 +500,6 @@
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "from";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // numericUpDown2
             // 
@@ -447,7 +557,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Counter";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // lblCount
             // 
@@ -457,7 +566,6 @@
             this.lblCount.Size = new System.Drawing.Size(13, 13);
             this.lblCount.TabIndex = 3;
             this.lblCount.Text = "0";
-            this.lblCount.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnReset
             // 
@@ -492,127 +600,6 @@
             this.btnPlus.UseVisualStyleBackColor = true;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
-            // btnCopyPassword
-            // 
-            this.btnCopyPassword.Location = new System.Drawing.Point(8, 135);
-            this.btnCopyPassword.Name = "btnCopyPassword";
-            this.btnCopyPassword.Size = new System.Drawing.Size(75, 23);
-            this.btnCopyPassword.TabIndex = 5;
-            this.btnCopyPassword.Text = "Copy";
-            this.btnCopyPassword.UseVisualStyleBackColor = true;
-            this.btnCopyPassword.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnClearPassword
-            // 
-            this.btnClearPassword.Location = new System.Drawing.Point(99, 135);
-            this.btnClearPassword.Name = "btnClearPassword";
-            this.btnClearPassword.Size = new System.Drawing.Size(75, 23);
-            this.btnClearPassword.TabIndex = 6;
-            this.btnClearPassword.Text = "Clear";
-            this.btnClearPassword.UseVisualStyleBackColor = true;
-            this.btnClearPassword.Click += new System.EventHandler(this.btnClearPassword_Click);
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.cbMetrics);
-            this.tabPage5.Controls.Add(this.btnSwap);
-            this.tabPage5.Controls.Add(this.tbTo);
-            this.tabPage5.Controls.Add(this.tbFrom);
-            this.tabPage5.Controls.Add(this.btnConvector);
-            this.tabPage5.Controls.Add(this.cbTo);
-            this.tabPage5.Controls.Add(this.cbFrom);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(320, 262);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Convertor";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
-            // 
-            // cbFrom
-            // 
-            this.cbFrom.FormattingEnabled = true;
-            this.cbFrom.Items.AddRange(new object[] {
-            "mm",
-            "cm",
-            "dm",
-            "m",
-            "km",
-            "mile"});
-            this.cbFrom.Location = new System.Drawing.Point(36, 126);
-            this.cbFrom.Name = "cbFrom";
-            this.cbFrom.Size = new System.Drawing.Size(83, 21);
-            this.cbFrom.TabIndex = 0;
-            this.cbFrom.Text = "mm";
-            // 
-            // cbTo
-            // 
-            this.cbTo.FormattingEnabled = true;
-            this.cbTo.Items.AddRange(new object[] {
-            "mm",
-            "cm",
-            "dm",
-            "m",
-            "km",
-            "mile"});
-            this.cbTo.Location = new System.Drawing.Point(206, 126);
-            this.cbTo.Name = "cbTo";
-            this.cbTo.Size = new System.Drawing.Size(83, 21);
-            this.cbTo.TabIndex = 1;
-            this.cbTo.Text = "mm";
-            this.cbTo.SelectedIndexChanged += new System.EventHandler(this.cbTo_SelectedIndexChanged);
-            // 
-            // btnConvector
-            // 
-            this.btnConvector.Location = new System.Drawing.Point(102, 84);
-            this.btnConvector.Name = "btnConvector";
-            this.btnConvector.Size = new System.Drawing.Size(121, 36);
-            this.btnConvector.TabIndex = 2;
-            this.btnConvector.Text = "Convert";
-            this.btnConvector.UseVisualStyleBackColor = true;
-            this.btnConvector.Click += new System.EventHandler(this.btnConvector_Click);
-            // 
-            // tbFrom
-            // 
-            this.tbFrom.Location = new System.Drawing.Point(36, 163);
-            this.tbFrom.Name = "tbFrom";
-            this.tbFrom.Size = new System.Drawing.Size(83, 20);
-            this.tbFrom.TabIndex = 3;
-            this.tbFrom.Text = "0";
-            // 
-            // tbTo
-            // 
-            this.tbTo.Location = new System.Drawing.Point(206, 163);
-            this.tbTo.Name = "tbTo";
-            this.tbTo.ReadOnly = true;
-            this.tbTo.Size = new System.Drawing.Size(83, 20);
-            this.tbTo.TabIndex = 4;
-            this.tbTo.Text = "0";
-            this.tbTo.TextChanged += new System.EventHandler(this.tbTo_TextChanged);
-            // 
-            // btnSwap
-            // 
-            this.btnSwap.Location = new System.Drawing.Point(125, 143);
-            this.btnSwap.Name = "btnSwap";
-            this.btnSwap.Size = new System.Drawing.Size(75, 23);
-            this.btnSwap.TabIndex = 5;
-            this.btnSwap.Text = "<->";
-            this.btnSwap.UseVisualStyleBackColor = true;
-            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
-            // 
-            // cbMetrics
-            // 
-            this.cbMetrics.FormattingEnabled = true;
-            this.cbMetrics.Items.AddRange(new object[] {
-            "Length",
-            "Mass"});
-            this.cbMetrics.Location = new System.Drawing.Point(102, 57);
-            this.cbMetrics.Name = "cbMetrics";
-            this.cbMetrics.Size = new System.Drawing.Size(121, 21);
-            this.cbMetrics.TabIndex = 6;
-            this.cbMetrics.Text = "Length";
-            this.cbMetrics.SelectedIndexChanged += new System.EventHandler(this.cbMetrics_SelectedIndexChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,6 +614,8 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPassLength)).EndInit();
@@ -638,8 +627,6 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

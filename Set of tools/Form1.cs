@@ -21,6 +21,12 @@ namespace Set_of_tools
             InitializeComponent();
             rnd = new Random();
             metrica = new Dictionary<string, double>();
+            metrica.Add("mm", 1);
+            metrica.Add("cm", 10);
+            metrica.Add("dm", 100);
+            metrica.Add("m", 1000);
+            metrica.Add("km", 1000000);
+            metrica.Add("mile", 1609344);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,16 +51,6 @@ namespace Set_of_tools
             lblCount.Text = count.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnPlus_Click(object sender, EventArgs e)
         {
             ++count;
@@ -65,16 +61,6 @@ namespace Set_of_tools
         {
             --count;
             lblCount.Text = count.ToString();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnRand_Click(object sender, EventArgs e)
@@ -96,11 +82,6 @@ namespace Set_of_tools
             else tbRand.AppendText(n + " ");
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnRandClear_Click(object sender, EventArgs e)
         {
             tbRand.Clear();
@@ -119,11 +100,6 @@ namespace Set_of_tools
         private void tsmiInsertDate_Click(object sender, EventArgs e)
         {
             rtbNotebook.AppendText(DateTime.Now.ToShortDateString() + "\n");
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void tsmiSave_Click(object sender, EventArgs e)
@@ -152,26 +128,6 @@ namespace Set_of_tools
         private void tsmiLoad_Click(object sender, EventArgs e)
         {
             LoadNotebook();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudPassLength_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clbPassword_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void bCreatePassword_Click(object sender, EventArgs e)
@@ -208,11 +164,6 @@ namespace Set_of_tools
             tbPassword.Clear();
         }
 
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConvector_Click(object sender, EventArgs e)
         {
             double m1 = metrica[cbFrom.Text];
@@ -230,16 +181,6 @@ namespace Set_of_tools
             temp = tbFrom.Text;
             tbFrom.Text = tbTo.Text;
             tbTo.Text = temp;
-        }
-
-        private void tbTo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbTo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void cbMetrics_SelectedIndexChanged(object sender, EventArgs e)
