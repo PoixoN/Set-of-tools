@@ -75,6 +75,8 @@
             this.btnConvector = new System.Windows.Forms.Button();
             this.tbFrom = new System.Windows.Forms.TextBox();
             this.tbTo = new System.Windows.Forms.TextBox();
+            this.btnSwap = new System.Windows.Forms.Button();
+            this.cbMetrics = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -512,6 +514,8 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.cbMetrics);
+            this.tabPage5.Controls.Add(this.btnSwap);
             this.tabPage5.Controls.Add(this.tbTo);
             this.tabPage5.Controls.Add(this.tbFrom);
             this.tabPage5.Controls.Add(this.btnConvector);
@@ -535,7 +539,7 @@
             "m",
             "km",
             "mile"});
-            this.cbFrom.Location = new System.Drawing.Point(8, 21);
+            this.cbFrom.Location = new System.Drawing.Point(36, 126);
             this.cbFrom.Name = "cbFrom";
             this.cbFrom.Size = new System.Drawing.Size(83, 21);
             this.cbFrom.TabIndex = 0;
@@ -551,17 +555,18 @@
             "m",
             "km",
             "mile"});
-            this.cbTo.Location = new System.Drawing.Point(229, 21);
+            this.cbTo.Location = new System.Drawing.Point(206, 126);
             this.cbTo.Name = "cbTo";
             this.cbTo.Size = new System.Drawing.Size(83, 21);
             this.cbTo.TabIndex = 1;
             this.cbTo.Text = "mm";
+            this.cbTo.SelectedIndexChanged += new System.EventHandler(this.cbTo_SelectedIndexChanged);
             // 
             // btnConvector
             // 
-            this.btnConvector.Location = new System.Drawing.Point(129, 21);
+            this.btnConvector.Location = new System.Drawing.Point(102, 84);
             this.btnConvector.Name = "btnConvector";
-            this.btnConvector.Size = new System.Drawing.Size(75, 23);
+            this.btnConvector.Size = new System.Drawing.Size(121, 36);
             this.btnConvector.TabIndex = 2;
             this.btnConvector.Text = "Convert";
             this.btnConvector.UseVisualStyleBackColor = true;
@@ -569,18 +574,44 @@
             // 
             // tbFrom
             // 
-            this.tbFrom.Location = new System.Drawing.Point(8, 67);
+            this.tbFrom.Location = new System.Drawing.Point(36, 163);
             this.tbFrom.Name = "tbFrom";
             this.tbFrom.Size = new System.Drawing.Size(83, 20);
             this.tbFrom.TabIndex = 3;
+            this.tbFrom.Text = "0";
             // 
             // tbTo
             // 
-            this.tbTo.Location = new System.Drawing.Point(229, 67);
+            this.tbTo.Location = new System.Drawing.Point(206, 163);
             this.tbTo.Name = "tbTo";
             this.tbTo.ReadOnly = true;
             this.tbTo.Size = new System.Drawing.Size(83, 20);
             this.tbTo.TabIndex = 4;
+            this.tbTo.Text = "0";
+            this.tbTo.TextChanged += new System.EventHandler(this.tbTo_TextChanged);
+            // 
+            // btnSwap
+            // 
+            this.btnSwap.Location = new System.Drawing.Point(125, 143);
+            this.btnSwap.Name = "btnSwap";
+            this.btnSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnSwap.TabIndex = 5;
+            this.btnSwap.Text = "<->";
+            this.btnSwap.UseVisualStyleBackColor = true;
+            this.btnSwap.Click += new System.EventHandler(this.btnSwap_Click);
+            // 
+            // cbMetrics
+            // 
+            this.cbMetrics.FormattingEnabled = true;
+            this.cbMetrics.Items.AddRange(new object[] {
+            "Length",
+            "Mass"});
+            this.cbMetrics.Location = new System.Drawing.Point(102, 57);
+            this.cbMetrics.Name = "cbMetrics";
+            this.cbMetrics.Size = new System.Drawing.Size(121, 21);
+            this.cbMetrics.TabIndex = 6;
+            this.cbMetrics.Text = "Length";
+            this.cbMetrics.SelectedIndexChanged += new System.EventHandler(this.cbMetrics_SelectedIndexChanged);
             // 
             // MainForm
             // 
@@ -662,6 +693,8 @@
         private System.Windows.Forms.TextBox tbFrom;
         private System.Windows.Forms.Button btnConvector;
         private System.Windows.Forms.ComboBox cbTo;
+        private System.Windows.Forms.Button btnSwap;
+        private System.Windows.Forms.ComboBox cbMetrics;
     }
 }
 
