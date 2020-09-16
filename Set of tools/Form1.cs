@@ -14,15 +14,25 @@ namespace Set_of_tools
     {
         int count = 0;
         Random rnd;
+        char[] spec_chars = new char[] { '#', '%', '@', '$', '_', '&' };
+        Dictionary<string, double> metrica;
         public MainForm()
         {
             InitializeComponent();
             rnd = new Random();
+            metrica = new Dictionary<string, double>();
+            metrica.Add("mm", 1);
+            metrica.Add("cm", 10);
+            metrica.Add("dm", 100);
+            metrica.Add("m", 1000);
+            metrica.Add("km", 1000000);
+            metrica.Add("mile", 1609344);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadNotebook();
+            clbPassword.SetItemChecked(0, true);
         }
 
         private void tsmiExit_Click(object sender, EventArgs e)
@@ -148,6 +158,73 @@ namespace Set_of_tools
         private void tsmiLoad_Click(object sender, EventArgs e)
         {
             LoadNotebook();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudPassLength_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clbPassword_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bCreatePassword_Click(object sender, EventArgs e)
+        {
+            if (clbPassword.CheckedItems.Count == 0) return;
+            string password = "";
+            for (int i = 0; i < nudPassLength.Value; i++)
+            {
+                int n = rnd.Next(0, clbPassword.CheckedItems.Count);
+                string s = clbPassword.CheckedItems[n].ToString();
+                switch(s)
+                {
+                    case "Digits": password += rnd.Next(10).ToString(); 
+                        break;
+                    case "Uppercase letters": password += Convert.ToChar(rnd.Next(65, 88)); 
+                        break;
+                    case "Lowcase letters": password += Convert.ToChar(rnd.Next(97, 122)); 
+                        break;
+                    default:
+                        password += spec_chars[rnd.Next(spec_chars.Length)];
+                        break;
+                }
+                tbPassword.Text = password;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbPassword.Text);
+        }
+
+        private void btnClearPassword_Click(object sender, EventArgs e)
+        {
+            tbPassword.Clear();
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConvector_Click(object sender, EventArgs e)
+        {
+            double m1 = metrica[cbFrom.Text];
+            double m2 = metrica[cbTo.Text];
+            double num = Convert.ToDouble(tbFrom.Text);
+            tbTo.Text = (num * m1 / m2).ToString();
         }
     }
 }
